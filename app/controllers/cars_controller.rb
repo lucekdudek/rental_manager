@@ -3,6 +3,7 @@
 class CarsController < ApplicationController
 
 	def index
+		#Car.delete_all
 		@cars = Car.all
 	end
 

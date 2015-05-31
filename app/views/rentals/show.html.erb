@@ -1,0 +1,23 @@
+<div class="page-header">
+  <h1>Wypożyczenia</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Samochód</th>
+          <th>Klient</th>
+          <th>Okres</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th><%= @rental.car.name %></th>
+        <th><%= @rental.client.firstname %> <%= @rental.client.secondname %></th>
+        <th><%= @rental.date_start %> - <%= @rental.date_stop %></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

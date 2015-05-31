@@ -1,3 +1,52 @@
-<p><%= @car.name %></p>
-<p><%= @car.description %></p>
-<p><%= @car.category.category %></p>
+<div class="page-header">
+  <h1>Samochody</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Opis</th>
+          <th>Kategoria</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th><%= @car.name %></th>
+        <th><%= @car.description %></th>
+        <th><%= link_to @car.category.category, @car.category %></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="page-header">
+  <h3>Wypożyczenia</h3>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Klient</th>
+          <th>Data wypożyczenia</th>
+          <th>Data zwrotu</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @car.rentals.each do |rental| %>
+      <tr>
+        <th><%= link_to rental.client.firstname+" "+rental.client.secondname, rental.client %></th>
+        <th><%= rental.date_start %></th>
+        <th><%= rental.date_stop %></th></th>
+      </tr>
+      <% end %>
+      </tbody>
+      <% if @car.rentals.size == 0 %>
+        <em>Brak wypożyczeń<em>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -1,19 +1,31 @@
-<div>
-	<p><%= link_to "Dodaj samochód", new_car_path %></p>
+<div class="page-header">
+  <h1>Samochody</h1>
 </div>
-<div>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Category</th>
-  </tr> 
-<% @cars.each do |car| %>
-  <tr>
-    <th><%= link_to car.name, car %></th>
-    <th><%= link_to car.category, car.category %></th>
-  </tr>
-<% end %>
-<% if @cars.size == 0 %>
-  <em>No cars<em>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Opis</th>
+          <th>Kategoria</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @cars.each do |car| %>
+      <tr>
+        <th><%= link_to car.name, car %></th>
+        <th><%= car.description %></th>
+        <th><%= link_to car.category.category, car.category %></th>
+      </tr>
+      </tbody>
+      <% end %>
+      <% if @cars.size == 0 %>
+        <em>Brak samochodów<em>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="page-header">
+  <p><%= link_to "Dodaj samochód", new_car_path %></p>
 </div>

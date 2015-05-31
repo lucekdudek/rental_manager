@@ -1,17 +1,17 @@
 <%= form_for(@client) do |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Imię %><br />
-    <%= f.text_field :firstname %>
+    <%= f.text_field :firstname, {:required => "required"}%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Nazwisko %><br />
-    <%= f.text_field :secondname %>
+    <%= f.text_field :secondname, {:required => "required"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :PESEL %><br />
-    <%= f.number_field :pesel %>
+    <%= f.number_field :pesel, {:required => "required"} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj klienta", :class => "btn btn-primary" %>
   </div>
 <% end %>

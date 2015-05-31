@@ -1,11 +1,11 @@
 <%= form_for(@category) do |f| %>
   <div class="field">
     <%= f.label :Kategoria %><br />
-    <%= f.text_field :category %>
+    <%= f.text_field :category, {:required => "required"} %>
   </div>
   <div class="field">
     <%= f.label :Cena %><br />
-    <%= f.text_field :price %>
+    <%= f.text_field :price, {:required => "required"} %>
   </div>
   <div class="actions">
     <%= f.submit %>

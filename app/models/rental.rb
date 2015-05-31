@@ -3,6 +3,6 @@
 class Rental < ActiveRecord::Base
 	belongs_to :car
 	belongs_to :client
-	validates_date :start_date, presence: true
-	validates_date :stop_date, presence: true
+	validate :date_start, presence: true
+	validates :date_stop, presence: true
 end

@@ -1,2 +1,52 @@
-<p><%= @client.firstname %> <%= @client.secondname %></p>
-<p><%= @client.pesel %></p>
+<div class="page-header">
+  <h1>Klienci</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+          <th>PESEL</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <th><%= @client.firstname %></th>
+        <th><%= @client.secondname %></th>
+        <th><%= @client.pesel %></th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="page-header">
+  <h3>Wypożyczenia</h3>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Samochód</th>
+          <th>Data wypożyczenia</th>
+          <th>Data zwrotu</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @client.rentals.each do |rental| %>
+      <tr>
+        <th><%= link_to rental.car.name, rental.car %></th>
+        <th><%= rental.date_start %></th>
+        <th><%= rental.date_stop %></th></th>
+      </tr>
+      <% end %>
+      </tbody>
+      <% if @client.rentals.size == 0 %>
+        <em>Brak wypożyczeń<em>
+      <% end %>
+    </table>
+  </div>
+</div>

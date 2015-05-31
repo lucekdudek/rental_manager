@@ -1,19 +1,29 @@
-<div>
-	<p><%= link_to "Nowy klient", new_client_path %></p>
+<div class="page-header">
+  <h1>Klienci</h1>
 </div>
-<div>
-<table>
-  <tr>
-    <th>Firstname</th>
-    <th>Secondname</th>
-  </tr> 
-<% @clients.each do |client| %>
-  <tr>
-    <th><%= client.firstname %></th>
-    <th><%= link_to client.secondname, client %></th>
-  </tr>
-<% end %>
-<% if @clients.size == 0 %>
-  <em>No clients<em>
-<% end %>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Imię</th>
+          <th>Nazwisko</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @clients.each do |client| %>
+      <tr>
+        <th><%= client.firstname %></th>
+        <th><%= link_to client.secondname, client %></th>
+      </tr>
+      </tbody>
+      <% end %>
+      <% if @clients.size == 0 %>
+        <em>Brak klientów<em>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="page-header">
+  <p><%= link_to "Nowy klient", new_client_path %></p>
 </div>

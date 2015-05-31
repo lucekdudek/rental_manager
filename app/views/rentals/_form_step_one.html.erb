@@ -1,0 +1,21 @@
+<%= form_tag(new_step_two_path, method: "get") do %>
+  <div class="form-group">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Data wypożyczenia</th>
+          <th>Data zwrotu</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+        <th><%= date_field(@hash, :date_start, :required => "required") %></th>
+        <th><%= date_field(@hash, :date_stop, :required => "required") %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Dalej", :class => "btn btn-primary" %>
+  </div>
+<% end %>

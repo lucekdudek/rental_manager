@@ -1,17 +1,17 @@
 <%= form_for([@category, @car]) do |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Nazwa %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, {:required => "required"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Opis %><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, {:required => "required"} %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Kategoria %><br />
-    <%= f.collection_select(:category_id, Category.all, :id, :category) %>
+    <%= f.collection_select(:category_id, Category.all, :id, :category, {:required => "required"}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Dodaj samochód", :class => "btn btn-primary" %>
   </div>
 <% end %>

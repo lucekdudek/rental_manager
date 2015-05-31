@@ -1,1 +1,33 @@
-<%= @text %>
+<div class="page-header">
+  <h1>Wymożyczenia</h1>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Samochód</th>
+          <th>Klient</th>
+          <th>Data wypożyczenia</th>
+          <th>Data zwrotu</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @rentals.each do |rental| %>
+      <tr>
+        <th><%= link_to rental.car.name, rental.car %></th>
+        <th><%= link_to rental.client.firstname+" "+rental.client.secondname, rental.client %></th>
+        <th><%= rental.date_start %></th>
+        <th><%= rental.date_stop %></th>
+      </tr>
+      </tbody>
+      <% end %>
+      <% if @rentals.size == 0 %>
+        <em>Brak wypożyczeń<em>
+      <% end %>
+    </table>
+  </div>
+</div>
+<div class="page-header">
+  <p><%= link_to "Dodaj wypożyczenie", new_step_one_path %></p>
+</div>

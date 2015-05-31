@@ -54,11 +54,13 @@ RentalCompany::Application.routes.draw do
   #     resources :products
   #   end
 
+  get '/rentals/newstepone', to: 'rentals#new_step_one', as: 'new_step_one'
+  get '/rentals/newsteptwo', to: 'rentals#new_step_two', as: 'new_step_two'
   resources :cars
   resources :rentals
   resources :clients
   resources :categories
   root to: 'main#index'
-  #get '/' => redirect('/rentals')
+  
   
 end

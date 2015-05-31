@@ -1,0 +1,21 @@
+<%= form_for(@rental) do |f| %>
+  <div class="form-group">
+    <%= f.label :Samochód %><br />
+    <%= f.collection_select(:car_id, @cars, :id, :name, {:prompt => 'wybierz samochód'}, {:required => "required"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Klient %><br />
+    <%= f.collection_select(:client_id, @clients, :id, :secondname, {:prompt => 'wybierz klienta'}, {:required => "required"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :Data_Wypożyczenia %><br />
+    <%= f.date_field :date_start, :readonly => "readonly", :required => "required"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :Data_Zwrotu %><br />
+    <%= f.date_field :date_stop, :readonly => "readonly", :required => "required" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Dodaj wypożyczenie", :class => "btn btn-primary" %>
+  </div>
+<% end %>

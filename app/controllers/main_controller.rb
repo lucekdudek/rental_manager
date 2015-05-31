@@ -3,7 +3,7 @@
 class MainController < ApplicationController
 
 	def index
-		@text = "Strona Główna"
+		@text = "Wypożyczalnia"
 	end
 
 end
