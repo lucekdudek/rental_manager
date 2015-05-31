@@ -3,7 +3,6 @@
 class RentalsController < ApplicationController
 
 	def index
-		#Rental.delete_all
 		@rentals = Rental.all
 
 	end
@@ -64,5 +63,14 @@ class RentalsController < ApplicationController
       		end
     	end
     end
+
+    def destroy
+    	@rental = Rental.find(params[:id])
+    	@rental.destroy
+
+    	respond_to do |format|
+      		format.html { redirect_to rentals_path }
+  		end
+  	end
 
 end

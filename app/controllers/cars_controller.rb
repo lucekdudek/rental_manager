@@ -3,7 +3,6 @@
 class CarsController < ApplicationController
 
 	def index
-		#Car.delete_all
 		@cars = Car.all
 	end
 
@@ -37,4 +36,14 @@ class CarsController < ApplicationController
       		end
     	end
     end
+
+    def destroy
+    	@car = Car.find(params[:id])
+    	@car.destroy
+
+    	respond_to do |format|
+      		format.html { redirect_to cars_path }
+  		end
+  	end
+
 end

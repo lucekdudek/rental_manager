@@ -15,6 +15,7 @@
       <tr>
         <th><%= client.firstname %></th>
         <th><%= link_to client.secondname, client %></th>
+        <th><%= link_to "usuń", client, method: :delete %></th>
       </tr>
       </tbody>
       <% end %>

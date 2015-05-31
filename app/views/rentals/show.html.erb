@@ -16,6 +16,7 @@
         <th><%= @rental.car.name %></th>
         <th><%= @rental.client.firstname %> <%= @rental.client.secondname %></th>
         <th><%= @rental.date_start %> - <%= @rental.date_stop %></th>
+        <th><%= link_to "usuń", @rental, method: :delete %></th>
       </tr>
       </tbody>
     </table>

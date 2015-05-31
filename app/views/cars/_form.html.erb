@@ -9,7 +9,7 @@
   </div>
   <div class="form-group">
     <%= f.label :Kategoria %><br />
-    <%= f.collection_select(:category_id, Category.all, :id, :category, {:required => "required"}) %>
+    <%= f.collection_select(:category_id, Category.all, :id, :category, {:prompt => 'wybierz kategorię'}, {:required => "required"}) %>
   </div>
   <div class="actions">
     <%= f.submit "Dodaj samochód", :class => "btn btn-primary" %>

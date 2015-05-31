@@ -17,6 +17,7 @@
         <th><%= link_to car.name, car %></th>
         <th><%= car.description %></th>
         <th><%= link_to car.category.category, car.category %></th>
+        <th><%= link_to "usuń", car, method: :delete %></th>
       </tr>
       </tbody>
       <% end %>

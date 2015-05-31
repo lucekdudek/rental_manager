@@ -19,6 +19,7 @@
         <th><%= link_to rental.client.firstname+" "+rental.client.secondname, rental.client %></th>
         <th><%= rental.date_start %></th>
         <th><%= rental.date_stop %></th>
+        <th><%= link_to "usuń", rental, method: :delete %></th>
       </tr>
       </tbody>
       <% end %>

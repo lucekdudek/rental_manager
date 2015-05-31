@@ -16,6 +16,7 @@
         <th><%= @client.firstname %></th>
         <th><%= @client.secondname %></th>
         <th><%= @client.pesel %></th>
+        <th><%= link_to "usuń", @client, method: :delete %></th>
       </tr>
       </tbody>
     </table>
