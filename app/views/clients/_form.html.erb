@@ -1,0 +1,17 @@
+<%= form_for(@client) do |f| %>
+  <div class="field">
+    <%= f.label :Imię %><br />
+    <%= f.text_field :firstname %>
+  </div>
+  <div class="field">
+    <%= f.label :Nazwisko %><br />
+    <%= f.text_field :secondname %>
+  </div>
+  <div class="field">
+    <%= f.label :PESEL %><br />
+    <%= f.number_field :pesel %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RentalCompany</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div>
+	<ul>
+		<li><a href="/cars">Samochody</a></li>
+		<li><a href="/clients">Klienci</a></li>
+		<li><a href="/rentals">Wypożyczenia</a></li>
+	</ul>
+</div>
+
+<div>
+<%= yield %>
+</div>
+
+</body>
+</html>

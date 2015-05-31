@@ -1,0 +1,17 @@
+<%= form_for([@category, @car]) do |f| %>
+  <div class="field">
+    <%= f.label :Nazwa %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Opis %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :Kategoria %><br />
+    <%= f.collection_select(:category_id, Category.all, :id, :category) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

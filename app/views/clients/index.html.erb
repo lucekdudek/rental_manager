@@ -1,0 +1,19 @@
+<div>
+	<p><%= link_to "Nowy klient", new_client_path %></p>
+</div>
+<div>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Secondname</th>
+  </tr> 
+<% @clients.each do |client| %>
+  <tr>
+    <th><%= client.firstname %></th>
+    <th><%= link_to client.secondname, client %></th>
+  </tr>
+<% end %>
+<% if @clients.size == 0 %>
+  <em>No clients<em>
+<% end %>
+</div>

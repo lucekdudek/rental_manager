@@ -1,0 +1,19 @@
+<div>
+	<p><%= link_to "Dodaj samochód", new_car_path %></p>
+</div>
+<div>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Category</th>
+  </tr> 
+<% @cars.each do |car| %>
+  <tr>
+    <th><%= link_to car.name, car %></th>
+    <th><%= link_to car.category, car.category %></th>
+  </tr>
+<% end %>
+<% if @cars.size == 0 %>
+  <em>No cars<em>
+<% end %>
+</div>
